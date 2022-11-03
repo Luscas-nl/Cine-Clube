@@ -17,9 +17,10 @@
     flex-direction: row;
     color: black;
     justify-content: space-between;
-    transition: .1s ease;
+    transition: .5s ease;
     position: relative;
     user-select: none;
+    outline: 1px solid white;
 }
 
 .imgMovieBox{
@@ -72,8 +73,7 @@
 .instru{
     position: absolute;
     bottom: 25px;
-    right: 0;
-    transform: translate(-100%);
+    right: 35%;
     font-size: 2em;
     color: white;
     transition: .2s ease;

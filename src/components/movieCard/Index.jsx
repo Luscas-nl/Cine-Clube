@@ -1,5 +1,5 @@
 import './Style.css'
-import Psicose from '../../assets/images/Psicose.jpg'
+import Psicose from '../../assets/images/Psicose.png'
 
 
 function MovieCard(props) {

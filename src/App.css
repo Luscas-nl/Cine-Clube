@@ -38,9 +38,45 @@
 .homeText{
   position: absolute;
   font-family: 'Special Elite', cursive;
-  bottom: 165px;
+  bottom: 125px;
   left: 95px;
   width: 30%;
   font-size: 1.75em;
   line-height: 1.5;
+}
+
+.joinCineButton{
+  background-color: #D21F35;
+  border: none;
+  margin-top: 25px;
+  padding: 12px 55px;
+  font-size: .9em;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.formRegister{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .8s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.formRegister.hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.joinCineButton:hover{
+  background-color: white;
+  color: #D21F35;
 }

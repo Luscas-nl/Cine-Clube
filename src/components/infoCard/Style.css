@@ -1,7 +1,7 @@
 .infoCard[color="white"]{
     background-color: white;
     color: black;
-    width: 25%;
+    width: 29%;
     padding: 35px 0 75px 0;
 }
 
@@ -12,7 +12,7 @@
 .infoCard[color="black"]{
     background-color: black;
     color: white;
-    width: 25%;
+    width: 29%;
     padding: 35px 0 75px 0;
 }
 
@@ -25,7 +25,7 @@
 .infoCard > p{
     margin-top: 15px;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
     padding: 0 35px;
     font-weight: 400;
 }

@@ -4,9 +4,23 @@ import './App.css'
 import Header from './components/header/Index'
 import InfoCard from './components/infoCard/Index'
 import MovieCard from './components/movieCard/Index'
+import RegisterForm from './components/registerForm/Indesx'
 
 function App() {
 
+  function JoinClub(){
+    const form = document.querySelector(".formRegister")
+    const button = document.querySelector(".joinCineButton")
+    
+    if(form.classList.contains("hidden")){
+      form.classList.remove("hidden")
+      button.innerHTML = "Cancelar inscrição"
+    } else {
+      form.classList.add("hidden")
+      button.innerHTML = "Junte-se ao clube"
+    }
+  }
+  
   return (
     <div className="App">
       <Header />
@@ -15,6 +29,11 @@ function App() {
 
         <div className="homeText">
           <p>As portas do mundo cinematográfico estão abertas para você, conheça pessoas com o mesmo amor e paixão pelo cinema.</p>
+          <button onClick={JoinClub} className="joinCineButton">Junte-se ao clube</button>
+        </div>
+
+        <div className="formRegister hidden">
+          <RegisterForm />
         </div>
       </section>
 
