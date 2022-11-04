@@ -5,6 +5,7 @@ import Header from './components/header/Index'
 import InfoCard from './components/infoCard/Index'
 import MovieCard from './components/movieCard/Index'
 import RegisterForm from './components/registerForm/Indesx'
+import TeamCard from './components/teamCard/Index'
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
   return (
     <div className="App">
       <Header />
+
+      {/* === SEÇÃO HOME === */}
       <section id='home' className='homeCarrossel'>
         <img src={carr1} alt="" />
 
@@ -37,14 +40,25 @@ function App() {
         </div>
       </section>
 
+      {/* === SEÇÃO SOBRE === */}
       <section id='about' className='about'>
         <InfoCard />
         <InfoCard color="white" title="Como Funciona?" desc="Todo mês nós temos duas reuniões em uma Sexta-feira, uma no turno da manhã e a outra na da tarde, sobre um filme escolhido previamente. O tema e a data serão sempre exibidos neste site, então não precisam ficar preocupados em ficarem desinformados."/>
         <InfoCard title="Proxima Reunião" desc="Nossa próxima reunião é Sexta-feira, 25/11, sobre o filme Psicose (1960), do Alfred Hitchcock, nos horários da manhã de 11h até 12h, e de tarde, de 13h até 14h."/>
       </section>
 
+      {/* === SEÇÃO FILME === */}
       <section id='movie' className='movie'>
         <MovieCard />
+      </section>
+
+      {/* === SEÇÃO TEAM === */}
+      <section id='team' className='team'>
+        <TeamCard />
+        <TeamCard />
+        <TeamCard />
+        <TeamCard />
+        <TeamCard />
       </section>
     </div>
   )

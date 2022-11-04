@@ -5,13 +5,13 @@ function RegisterForm(props) {
         <form action="" className='register'>
             <p>Entrar Para o Clube</p>
             <div className="registerSection">
-                <input type="text" name="Email" required placeholder='Email'/>
-                <input type="text" name="Nome" required placeholder='Nome'/>
+                <input type="email" name="Email" required placeholder='Email*'/>
+                <input type="text" name="Nome" required placeholder='Nome*'/>
             </div>
 
             <div className="registerSection">
-                <input type="text" name="Turma" required placeholder='Turma'/>
-                <input type="text" name="Turno" required placeholder='Turno'/>
+                <input type="text" name="Turma" required placeholder='Turma*'/>
+                <input type="text" name="Turno" required placeholder='Turno*'/>
             </div>
 
             <div className="registerSection">

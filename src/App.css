@@ -35,6 +35,17 @@
   height: 100vh;
 }
 
+.team{
+  width: 100%;
+  height: 295px;
+  background-color: #D21F35;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
 .homeText{
   position: absolute;
   font-family: 'Special Elite', cursive;
@@ -73,7 +84,6 @@
 
 .formRegister.hidden{
   opacity: 0;
-  visibility: hidden;
 }
 
 .joinCineButton:hover{
