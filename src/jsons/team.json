@@ -1,0 +1,39 @@
+{
+    "members":
+    [
+        {
+            "name": "Fernando Jorge",
+            "function": "Progamador",
+            "image": "https://i.ibb.co/Qb5ybws/Fe.png",
+            "desc": "Presidente do Cineclube desde Março de 2022. Adora Star Wars e por um milagre não botou o Darth Vader na capa quando criou esse site."
+        },
+
+        {
+            "name": "Malu Alaquoke",
+            "function": "Mediadora",
+            "image": "https://i.ibb.co/JFW8XZB/Malu.png",
+            "desc": "Fã número 1 do Wes Anderson, adora filmes de guerra, drama e fantasia. Vive de Cup Noodles e Brooklyn 99."
+        },
+
+        {
+            "name": "Eduardo Lucas",
+            "function": "Progamador",
+            "image": "https://i.ibb.co/bBXZh39/IMG-20221020-163209-585.jpg",
+            "desc": "Vive um trisal com a programação e filmes de fantasia, e após ser obrigado por sua mãe a assistir milhares de vezes, se tornou o maior hater de crepúsculo."
+        },
+
+        {
+            "name": "Lywya Eugênia",
+            "function": "Designer",
+            "image": "https://i.ibb.co/2YF2d0q/Ge.png",
+            "desc": "Obcecada pela lana del rey, twice e taylor swift. passatempo: ver filme cult para logar no letterboxed e hater número 1 do tarantino."
+        },
+
+        {
+            "name": "Maria Isabel",
+            "function": "Designer",
+            "image": "https://i.ibb.co/JkJzXZC/Bel.png",
+            "desc": "Bel, aspirante a designer, ama falar mal de adaptações literárias e é obcecada por orgulho e preconceito."
+        }
+    ]
+}

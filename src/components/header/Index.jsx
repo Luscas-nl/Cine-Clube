@@ -9,7 +9,7 @@ function Header(props) {
                 <a href="#">Home</a>
                 <a href="#about">Sobre Nós</a>
                 <a href="#movie">Filme</a>
-                <a href="#">Equipe</a>
+                <a href="#team">Equipe</a>
                 <a href="#">Contato</a>
             </div>
         </div>

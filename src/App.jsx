@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { members } from './jsons/team.json'
 import carr1 from './assets/images/DarthVader.jpg'
 import './App.css'
 import Header from './components/header/Index'
@@ -6,6 +7,7 @@ import InfoCard from './components/infoCard/Index'
 import MovieCard from './components/movieCard/Index'
 import RegisterForm from './components/registerForm/Indesx'
 import TeamCard from './components/teamCard/Index'
+import Carousel from 'react-elastic-carousel'
 
 function App() {
 
@@ -54,11 +56,12 @@ function App() {
 
       {/* === SEÇÃO TEAM === */}
       <section id='team' className='team'>
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
-        <TeamCard />
+        <p className='teamTitle'>Nossa Equipe</p>
+        <Carousel itemsToShow={2} showArrows={false}>
+          {members.map((member) => {
+            return <TeamCard  name={member.name} function={member.function} desc={member.desc} image={member.image} />
+          })}
+        </Carousel>
       </section>
     </div>
   )

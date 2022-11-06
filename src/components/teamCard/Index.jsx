@@ -5,7 +5,7 @@ function TeamCard(props) {
     return(
         <div className="teamCardBox">
             <div className="imgTeamBox">
-                <img src={Bill} alt="" />
+                <img src={props.image ?? Bill} alt="" />
             </div>
             <div className="infoTeamBox">
                 <p className="namePerson">{props.name ?? "Fernando Jorge"}</p>

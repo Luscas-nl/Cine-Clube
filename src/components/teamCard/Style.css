@@ -1,14 +1,14 @@
 .teamCardBox{
-    height: 90%;
-    width: 35%;
-    background-color: white;
+    height: 241px;
+    width: 571px;
+    background-color: rgb(0, 0, 0);
     border-radius: 25px;
     display: flex;
     flex-direction: row;
-    outline: 1px solid white;
-    color: black;
+    outline: 1px solid rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     align-items: center;
-    margin: 0 15px;
+    margin: 15px 0;
 }
 
 .imgTeamBox{
@@ -22,6 +22,7 @@
     height: 100%;
     border-radius: 25px 0 25px 25px;
     object-fit: cover;
+    pointer-events: none;
 }
 
 .infoTeamBox{
