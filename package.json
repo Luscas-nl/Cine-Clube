@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "install": "npm install react-elastic-carousel --force",
     "build": "vite build",
     "preview": "vite preview"
   },
