@@ -1,0 +1,83 @@
+.loginBox{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.loginBut{
+    user-select: none;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.loginInner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.loginTitle{
+    font-size: 3em;
+    margin-bottom: 25px;
+}
+
+.loginSeparator{
+    height: 75%;
+    background-color: white;
+    width: 3px;
+    margin: 75px;
+}
+
+.backLogin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-left: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: .8s ease;
+}
+
+.backLogin > .fa{
+    font-size: 1.3em;
+    margin-right: 5px;
+}
+
+.cineNameLogin{
+    font-size: 9em;
+    line-height: .8;
+}
+
+.loginDesc{
+    font-size: 1.8em;
+    line-height: 1.2;
+    width: 440px;
+    margin: 25px 0;
+}
+
+.loginBut > .fa{
+    margin-right: 9px;
+    font-size: 1.3em;
+}
+
+
+.loginBut:hover{
+    border: 2px solid #D21F35;
+    color: #D21F35;
+}
+
+.backLogin:hover{
+    transform: translateX(9px);
+}

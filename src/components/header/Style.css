@@ -10,10 +10,23 @@
     z-index: 1000;
 }
 
+.profileBox:hover{
+    opacity: .8;
+}
+
+.headerLeft{
+    display: flex;
+    flex-direction: row;
+}
+
 .HeaderName{
     text-decoration: none;
     color: white;
     font-size: 2em;
+}
+
+.headerButtons{
+    margin-left: 29px;
 }
 
 .headerButtons > a{

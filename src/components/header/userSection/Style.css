@@ -1,0 +1,38 @@
+.innerProfile{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.profileBox{
+    border: 2px solid black;
+    width: 45.5px;
+    height: 70%;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 1;
+    transition: .3s ease;
+}
+
+.makeLogin{
+    text-decoration: none;
+    color: white;
+}
+
+.makeLogin:hover{
+    opacity: .8;
+}
+
+.userName{
+    margin-right: 9px;
+}
+
+.profileBox > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
