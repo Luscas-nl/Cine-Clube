@@ -1,0 +1,56 @@
+.uOptionsBox{
+    position: absolute;
+    width: 15%;
+    height: 155px;
+    background-color: black;
+    right: 5px;
+    bottom: -151px;
+    border-radius: 15px;
+    outline: 1px solid #adadad;
+    visibility: visible;
+    transition: .6s ease;
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.uOptionsBox.hidden{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-11px);
+}
+
+.uOptions{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 11px 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.loggofButton{
+    color: rgb(255, 31, 31);
+}
+
+.uOptions > a{
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    text-align: right;
+    padding: 0 15px;
+    opacity: 1;
+    font-size: .9em;
+    cursor: pointer;
+}
+
+.lineUOptions{
+    width: 100%;
+    border: 1px solid #252525;
+}
+
+.uOptions > a:hover{
+    opacity: .8;
+}

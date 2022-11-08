@@ -1,5 +1,6 @@
 import './Style.css'
 import UserSection from './userSection/Index'
+import UserOptions from './userOptions/Index'
 
 function Header(props) {
 
@@ -18,6 +19,7 @@ function Header(props) {
             </div>
 
             <UserSection />
+            <UserOptions />
 
         </div>
     )

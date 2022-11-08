@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.Home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .homeCarrossel{
     width: 100%;
     position: relative;
@@ -28,17 +36,20 @@
 }
 
 .team{
-    width: 100%;
-    background-color: #D21F35;
+    width: 95%;
+    border-radius: 25px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 15px;
     justify-content: center;
     padding: 15px 0;
     user-select: none;
 }
 
 .teamTitle{
+    font-family: 'Fredoka One', cursive;
     font-size: 3em;
     padding: 19px;
     text-align: left;
@@ -46,16 +57,16 @@
 }
 
 .rec.rec-dot_active{
-    box-shadow: 0 0 1px 3px rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.575);
+    box-shadow: 0 0 1px 3px #D21F35;
+    background-color: #d21f3473;
 }
 
 .rec.rec-dot:focus{
-    box-shadow: 0 0 1px 3px rgb(255, 255, 255);
+    box-shadow: 0 0 1px 3px #D21F35;
 }
 
 .rec.rec-dot:hover{
-    box-shadow: 0 0 1px 3px rgb(255, 255, 255);
+    box-shadow: 0 0 1px 3px #D21F35;
 }
 
 .rec.rec-slider-container{

@@ -10,9 +10,14 @@ function UserSection(params) {
     const logUser = JSON.parse(user)
     console.log(logUser);
 
+    function hiddenOptions() {
+        const op = document.querySelector(".uOptionsBox")
+        op.classList.toggle("hidden")
+    }
+
     if(signed){
         return(
-            <div className="innerProfile">
+            <div className="innerProfile" onClick={hiddenOptions}>
                 <p className="userName">{logUser.displayName}</p>
                 <div className="profileBox">
                     <img src={User} alt="" />

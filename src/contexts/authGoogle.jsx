@@ -2,6 +2,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useEffect } from "react";
 import { useState, createContext } from "react";
 import { app } from '../services/firebaseConfig';
+import { Navigate } from "react-router-dom";
 
 export const AuthGoogleContext = createContext({})
 
@@ -13,8 +14,8 @@ export const AuthGoogleProvider = ({children}) => {
 
     useEffect(() => {
         const loadStoreAuth = () => {
-            const sessionToken = sessionStorage.getItem("@AuthFirebase:token")
-            const sessionUser = sessionStorage.getItem("@AuthFirebase:user")
+            const sessionToken = localStorage.getItem("@AuthFirebase:token")
+            const sessionUser = localStorage.getItem("@AuthFirebase:user")
 
             if(sessionToken && sessionUser){
                 setUser(sessionUser)
@@ -24,6 +25,14 @@ export const AuthGoogleProvider = ({children}) => {
         console.log(user)
     })
 
+    const logOff = () => {
+        console.log("entrou")
+        localStorage.removeItem("@AuthFirebase:token")
+        localStorage.removeItem("@AuthFirebase:user")
+
+        document.location.reload()
+    }
+
     const signInGoogle = () => {
         signInWithPopup(auth, provider)
         .then((result) => {
@@ -31,8 +40,8 @@ export const AuthGoogleProvider = ({children}) => {
             const token = credential.accessToken;
             const user = result.user;
             setUser(user)
-            sessionStorage.setItem("@AuthFirebase:token", token)
-            sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(user))
+            localStorage.setItem("@AuthFirebase:token", token)
+            localStorage.setItem("@AuthFirebase:user", JSON.stringify(user))
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -44,7 +53,7 @@ export const AuthGoogleProvider = ({children}) => {
 
     return(
         <AuthGoogleContext.Provider
-        value={{ signInGoogle, signed: !!user, user}}
+        value={{ signInGoogle, signed: !!user, user, logOff}}
         >
             {children}
         </AuthGoogleContext.Provider>

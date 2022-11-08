@@ -18,6 +18,10 @@ function Login () {
                             <i class="fa fa-google" aria-hidden="true"></i>
                             <p>Fazer login com o google</p>
                         </div>
+                        <div className="checkLoginBox">
+                            <input type="checkbox" id='checkLogin' className='checkLogin' />
+                            <label htmlFor='checkLogin'>Lembrar de mim</label>
+                        </div>
                     </div>
     
                     <span className="loginSeparator"></span>

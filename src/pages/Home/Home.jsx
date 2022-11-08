@@ -22,7 +22,7 @@ function Home() {
         button.innerHTML = "Junte-se ao clube"
         }
     }
-    
+
     return (
         <div className="Home">
             <Header />

@@ -81,3 +81,29 @@
 .backLogin:hover{
     transform: translateX(9px);
 }
+
+.checkLoginBox{
+    display: flex;
+    font-size: .9em;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 19px;
+}
+
+.checkLoginBox > label{
+    margin-left: 5px;
+}
+
+.checkLoginBox > input[type='checkbox']{
+    all: unset;
+    border: 2px solid rgb(255, 255, 255);
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 5px;
+
+}
+
+.checkLoginBox > input[type='checkbox']:checked{
+    background-color: #D21F35;
+}
