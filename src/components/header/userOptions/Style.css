@@ -5,8 +5,8 @@
     background-color: black;
     right: 5px;
     bottom: -151px;
-    border-radius: 15px;
-    outline: 1px solid #adadad;
+    border-radius: 7px;
+    outline: 1px solid #6d6d6d;
     visibility: visible;
     transition: .6s ease;
     transform: translateY(0px);
