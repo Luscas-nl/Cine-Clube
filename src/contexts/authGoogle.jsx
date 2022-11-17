@@ -22,11 +22,9 @@ export const AuthGoogleProvider = ({children}) => {
             }
         }
         loadStoreAuth()
-        console.log(user)
     })
 
     const logOff = () => {
-        console.log("entrou")
         localStorage.removeItem("@AuthFirebase:token")
         localStorage.removeItem("@AuthFirebase:user")
 

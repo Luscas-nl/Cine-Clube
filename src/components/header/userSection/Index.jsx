@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom'
 
 function UserSection(params) {
     const { user, signed } = useContext(AuthGoogleContext)
-    const logUser = JSON.parse(user)
-    console.log(logUser);
 
     function hiddenOptions() {
         const op = document.querySelector(".uOptionsBox")
@@ -16,11 +14,17 @@ function UserSection(params) {
     }
 
     if(signed){
+
+        const logUser = JSON.parse(user)
+        const img = logUser.photoURL
+        var strg = logUser.displayName
+        var firstName = strg?.split(' ')[0];
+
         return(
             <div className="innerProfile" onClick={hiddenOptions}>
-                <p className="userName">{logUser.displayName}</p>
+                <p className="userName">{firstName}</p>
                 <div className="profileBox">
-                    <img src={User} alt="" />
+                    <img src={img} alt="" />
                 </div>
             </div>
         )
