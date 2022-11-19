@@ -10,7 +10,7 @@ function UserOptions(props) {
     return(
         <div className="uOptionsBox hidden">
             <div className="uOptions">
-                <Link to="/">Meu Perfil</Link>
+                <Link to="/perfil">Meu Perfil</Link>
                 <span className="lineUOptions"></span>
                 <Link to="/">Meus Emblemas</Link>
                 <span className="lineUOptions"></span>

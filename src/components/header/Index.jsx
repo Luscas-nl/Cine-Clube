@@ -1,16 +1,17 @@
 import './Style.css'
 import UserSection from './userSection/Index'
 import UserOptions from './userOptions/Index'
+import { Link } from 'react-router-dom'
 
 function Header(props) {
 
     return(
         <div className='Header'>
             <div className="headerLeft">
-                <a href="#" className='HeaderName'>Cineclube.</a>
+                <Link to="/" className='HeaderName'>Cineclube.</Link>
 
                 <div className="headerButtons">
-                    <a href="#">Home</a>
+                    <Link to="/">Home</Link>
                     <a href="#about">Sobre Nós</a>
                     <a href="#movie">Filme</a>
                     <a href="#team">Equipe</a>

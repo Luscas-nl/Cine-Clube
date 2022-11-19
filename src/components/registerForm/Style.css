@@ -1,7 +1,7 @@
 .register{
     background-color: black;
     width: 75%;
-    height: 69%;
+    padding: 35px 0;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -49,6 +49,8 @@
     transition: .5s ease;
     cursor: pointer;
     font-size: 1.1em;
+    outline: none;
+    border: none;
 }
 
 .register > p{

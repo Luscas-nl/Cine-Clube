@@ -87,7 +87,8 @@
     font-size: .9em;
     align-items: center;
     cursor: pointer;
-    margin-top: 19px;
+    margin-top: 15px;
+    margin-left: 11px;
 }
 
 .checkLoginBox > label{
@@ -101,9 +102,16 @@
     height: 12px;
     display: inline-block;
     border-radius: 5px;
-
 }
 
 .checkLoginBox > input[type='checkbox']:checked{
     background-color: #D21F35;
+}
+
+.checkLoginBox > input[type='checkbox']:checked:hover{
+    background-color: #D21F35;
+}
+
+.checkLoginBox > input[type='checkbox']:hover{
+    background-color: #d21f3462;
 }

@@ -42,7 +42,6 @@ export const AuthGoogleProvider = ({children}) => {
             nickname: "",
             name: user.displayName
         })
-        getUser(user)
     }
 
     async function getUser(userLog){
@@ -54,6 +53,15 @@ export const AuthGoogleProvider = ({children}) => {
             localStorage.setItem("@Firestore:user", JSON.stringify(docSnap.data()))
         } else {
             makeUser(userLog)
+        }
+    }
+
+    async function AtualizeData (){
+        if(user){
+            const logUser = localStorage.getItem("@AuthFirebase:user")
+            const logJSON = JSON.parse(logUser)
+            await getUser(logJSON)
+            document.location.reload("/perfil")
         }
     }
 
@@ -78,7 +86,7 @@ export const AuthGoogleProvider = ({children}) => {
 
     return(
         <AuthGoogleContext.Provider
-        value={{ signInGoogle, signed: !!user && !!userDB, user, logOff, userDB}}
+        value={{ signInGoogle, signed: !!user && !!userDB, user, logOff, userDB, AtualizeData}}
         >
             {children}
         </AuthGoogleContext.Provider>

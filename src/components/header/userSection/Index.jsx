@@ -32,7 +32,7 @@ function UserSection(params) {
             <div className="innerProfile" onClick={hiddenOptions}>
                 <p className="userName">{nickname}</p>
                 <div className="profileBox">
-                    <img src={img} alt="" />
+                    <img src={logDB.urlPhoto ?? img} alt="" />
                 </div>
             </div>
         )
