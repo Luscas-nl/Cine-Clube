@@ -10,7 +10,9 @@ function AppRoutes() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/perfil" element={<Perfil />} />
+                <Route path="/perfil" element={<PrivateRoute />} >
+                    <Route path="/perfil" element={<Perfil />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     )

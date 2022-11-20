@@ -61,7 +61,8 @@ export const AuthGoogleProvider = ({children}) => {
             const logUser = localStorage.getItem("@AuthFirebase:user")
             const logJSON = JSON.parse(logUser)
             await getUser(logJSON)
-            document.location.reload("/perfil")
+            const sessionDB = localStorage.getItem("@Firestore:user")
+            setUserDB(sessionDB)
         }
     }
 

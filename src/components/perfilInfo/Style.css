@@ -168,7 +168,25 @@ input[type="file"]{
     background-color: white;
 }
 
+.altImageBox > button:disabled{
+    background-color: gray;
+    cursor: default;
+    color: rgb(180, 180, 180);
+}
+
+.altImageBox > button:disabled:hover{
+    background-color: gray;
+    cursor: default;
+    color: rgb(180, 180, 180);
+}
+
+.altImageBox > button:hover{
+    background-color: white;
+    color: #D21F35;
+}
+
 .altImageBox > button{
+    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;         

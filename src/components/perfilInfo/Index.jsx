@@ -51,10 +51,10 @@ function PerfilInfo(props) {
         }
 
         function UploadNewData(){
-            if(imgURl && newName && newNick){
-                UpdateData()
+            if(!imgURl && !newName && !newNick){
+                alert("Nenhum Campo Foi Preenchido")
             } else {
-                alert("Campo Vazio")
+                UpdateData()
             }
         }
 
@@ -90,12 +90,49 @@ function PerfilInfo(props) {
 
         async function UpdateData(){ 
             const dataRef = doc(db, "users", logUser.email)
+            var name = logDB.name
+            var nickname = logDB.nickname
+
+            if(newName != ""){
+                name = newName
+            }
+
+            if(newNick != ""){
+                nickname = newNick
+            }
+
             await updateDoc(dataRef, {
-                nickname: newNick,
-                name: newName,
-                urlPhoto: imgURl
+                nickname: nickname,
+                name: name,
+                urlPhoto: imgURl ?? logDB.urlPhoto
             })
             AtualizeData()
+
+            const itens = document.querySelectorAll(".alter")
+            const buttonAlter = document.querySelector(".buttonAlter")
+            const inputs = document.querySelectorAll(".inputAlter")
+            const img = document.querySelector(".perfilIMG")
+            const button = document.querySelector("#buttonImgSave")
+            button.setAttribute("disabled", "")
+            setImgURL(null)
+
+            setNewName("")
+            setNewNick("")
+            
+            img.setAttribute("src", logDB.urlPhoto ?? logUser.photoURL ?? User)
+
+            itens.forEach((item) => {
+                item.classList.toggle("hidden")
+                if(item.classList.contains("hidden")){
+                    buttonAlter.innerHTML = "Alterar"
+                } else {
+                    buttonAlter.innerHTML = "Cancelar"
+                }
+            })
+
+            inputs.forEach((input) => {
+                input.value = ""
+            })
         }
 
         return(
