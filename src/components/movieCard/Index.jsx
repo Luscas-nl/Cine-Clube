@@ -1,5 +1,5 @@
 import './Style.css'
-import Psicose from '../../assets/images/Psicose.png'
+import Filme from '../../assets/images/Filme.jpg'
 
 
 function MovieCard(props) {
@@ -7,13 +7,13 @@ function MovieCard(props) {
         <div className="movieCardBox">
             <div className="movieCard">
                 <div className="imgMovieBox">
-                    <img src={Psicose} alt="" />
+                    <img src={Filme} alt="" />
                 </div>
 
                 <div className="infoMovie">
-                    <p className="name">Psicose</p>
-                    <p className="about">1960 - Terror/Thriller - 109min</p>
-                    <p className="sinopse">Uma mulher rouba uma fortuna de um homem milionário e entra em uma fuga, paranoica em ser pega, o desconforto é transmitido na trama, até ela eventualmente conhecer um sujeito dono de um hotel um tanto que suspeito.</p>
+                    <p className="name">A Origem dos Guardiões</p>
+                    <p className="about">2012 - Animação/Fantasia - 97min</p>
+                    <p className="sinopse">Jack Frost, um garoto que controla o inverno, se junta ao seleto time dos Guardiões Imortais para impedir Breu, o bicho-papão, de transformar todos os sonhos das crianças em pesadelo e usar seus poderes maquiavélicos para governar o mundo.</p>
                 </div>
 
                 <p className="instru">Passe o mouse em cima</p>

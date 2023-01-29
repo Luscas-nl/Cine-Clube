@@ -40,7 +40,8 @@ export const AuthGoogleProvider = ({children}) => {
     async function makeUser(user){
         await setDoc(doc(db, "users", user.email), {
             nickname: "",
-            name: user.displayName
+            name: user.displayName,
+            desc: ""
         })
     }
 

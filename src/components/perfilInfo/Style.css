@@ -1,49 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 .perfilInner{
-    width: 95%;
-    height: 250px;
-    background-color: red;
-    border-radius: 11px;
-    margin-top: 70px;
-    position: relative;
+    width: 380px;
+    height: calc(100vh - 65px);
+    background-color: black;
+    margin-top: 65px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.imgPerfilInner{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 11px;
+.perfilBox{
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 6%;
 }
 
-.imgPerfilInner > img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 11px;
-    outline: 2px #D21F35 solid;
-}
-
-.imgPerfilInner > span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 11px;
-    background: rgb(0,0,0);
-    background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(5,5,5,0) 100%);
+.descPerfilArea{
+    height: 18%;
+    width: 74%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5px;
 }
 
 .personImg{
-    position: absolute;
-    width: 190px;
-    height: 190px;
+    width: 280px;
+    height: 280px;
     background-color: black;
-    bottom: -35%;
-    left: 45px;
-    z-index: 1000;
     border-radius: 50%;
-    outline: black 4px solid;
-    border: 2px solid #D21F35
+    outline: rgb(15, 15, 15) 3px solid;
+    position: relative;
 }
 
 .personImg > img{
@@ -58,25 +49,29 @@
 }
 
 .namePerfil{
-    visibility: visible;
-    position: absolute;
+    width: 70%;
+    font-family: 'Inter', sans-serif;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    bottom: 11px;
-    left: 235px;
+    flex-direction: column;
+    align-items: left;
     color: white;
-    margin-left: 11px;
+    margin-top: 15px;
 }
 
 .userPerfilName{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 .userPerfilNick{
+    font-weight: 300;
     font-size: 1em;
     color: gray;
-    margin-left: 5px;
+}
+
+.userPerfilDesc{
+    font-size: .8em;
+    line-height: 1;
+    font-weight: 500;
 }
 
 .buttonsPerfil{
@@ -88,12 +83,12 @@
 }
 
 .nameAlterBox > input[type='text']{
-    background-color: rgba(77, 77, 77, 0.356);
-    outline: 1px solid #D21F35;
+    background-color: rgba(34, 34, 34, 0.356);
+    outline: 1px solid #383838;
     border: none;
     padding: 7px 9px;
-    margin: 0 5px;
-    border-radius: 25px;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 
 .buttonSavePerfil.hidden{
@@ -125,12 +120,23 @@
 .nameAlterBox{
     position: absolute;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    bottom: 11px;
-    left: 235px;
+    width: 70%;
+    flex-direction: column;
+    align-items: left;
+    bottom: 46px;
     color: white;
-    margin-left: 11px;
+}
+
+.descInput{
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    margin-top: 3px;
+    background-color: rgba(34, 34, 34, 0.356);
+    outline: 1px solid #383838;
+    border: none;
+    padding: 7px 9px;
+    resize: none;
 }
 
 .alter.hidden{
@@ -146,16 +152,20 @@ input[type="file"]{
 }
 
 .filePerfil{
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+}
+
+.altImageBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
 }
 
 .buttonAlter:hover{

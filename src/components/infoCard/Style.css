@@ -1,6 +1,6 @@
 .infoCard[color="white"]{
     background-color: white;
-    color: black;
+    color: #111111;
     width: 29%;
     padding: 35px 0 75px 0;
 }
@@ -10,7 +10,7 @@
 }
 
 .infoCard[color="black"]{
-    background-color: black;
+    background-color: #111111;
     color: white;
     width: 29%;
     padding: 35px 0 75px 0;

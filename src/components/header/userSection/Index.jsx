@@ -10,7 +10,16 @@ function UserSection(params) {
 
     function hiddenOptions() {
         const op = document.querySelector(".uOptionsBox")
+        const seta = document.querySelector(".setinha")
         op.classList.toggle("hidden")
+
+        if(seta.classList.contains("fa-caret-down")){
+            seta.classList.remove("fa-caret-down")
+            seta.classList.add("fa-caret-up")
+        } else {
+            seta.classList.remove("fa-caret-up")
+            seta.classList.add("fa-caret-down")
+        }
     }
 
     if(signed){
@@ -30,9 +39,11 @@ function UserSection(params) {
 
         return(
             <div className="innerProfile" onClick={hiddenOptions}>
-                <p className="userName">{nickname}</p>
                 <div className="profileBox">
-                    <img src={logDB.urlPhoto ?? img} alt="" />
+                    <div className="profileImgBox">
+                        <img src={logDB.urlPhoto ?? img} alt="" />
+                    </div>
+                    <i className='fa fa-caret-down setinha' aria-hidden="true"></i>
                 </div>
             </div>
         )

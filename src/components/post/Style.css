@@ -1,0 +1,54 @@
+.postInner{
+    background-color: black;
+    width: 90%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px;
+    margin-bottom: 15px;
+}
+
+.postImageBox{
+    height: 100%;
+    width: 60px;
+}
+
+.postImageInner{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.postImageInner > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+.textsInner{
+    width: 100%;
+    background-color: rgb(8, 8, 8);
+    border-radius: 4px 15px 15px 4px;
+}
+
+.postText{
+    width: 90%;
+    font-size: .9em;
+    display: flex;
+    line-height: 1;
+    padding: 11px 11px;
+    color: #aaaaaa;
+    font-weight: 500;
+}
+
+.postInfos{
+    color: #aaaaaa;
+    width: 100%;
+    text-align: end;
+    font-size: .7em;
+    padding-right: 10px;
+    padding-bottom: 2px;
+}

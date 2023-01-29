@@ -5,6 +5,8 @@ import PrivateRoute from ".";
 import Perfil from "../pages/Perfil/Perfil";
 
 function AppRoutes() {
+
+
     return(
         <BrowserRouter>
             <Routes>

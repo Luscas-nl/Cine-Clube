@@ -14,6 +14,8 @@ function PerfilInfo(props) {
     const [imgURl, setImgURL] = useState(null)
     const [newName, setNewName] = useState("")
     const [newNick, setNewNick] = useState("")
+    const [newDesc, setNewDesc] = useState("")
+    
 
     const { user, userDB, signed, AtualizeData } = useContext(AuthGoogleContext)
 
@@ -21,6 +23,7 @@ function PerfilInfo(props) {
 
         const logUser = JSON.parse(user)
         const logDB = JSON.parse(userDB)
+        
 
         const HandleUpload = (e) => {
             e.preventDefault()
@@ -51,7 +54,7 @@ function PerfilInfo(props) {
         }
 
         function UploadNewData(){
-            if(!imgURl && !newName && !newNick){
+            if(!imgURl && !newName && !newNick && !newDesc){
                 alert("Nenhum Campo Foi Preenchido")
             } else {
                 UpdateData()
@@ -92,6 +95,7 @@ function PerfilInfo(props) {
             const dataRef = doc(db, "users", logUser.email)
             var name = logDB.name
             var nickname = logDB.nickname
+            var desc = logDB.desc
 
             if(newName != ""){
                 name = newName
@@ -101,10 +105,15 @@ function PerfilInfo(props) {
                 nickname = newNick
             }
 
+            if(newDesc != ""){
+                desc = newDesc
+            }
+
             await updateDoc(dataRef, {
                 nickname: nickname,
                 name: name,
-                urlPhoto: imgURl ?? logDB.urlPhoto
+                urlPhoto: imgURl ?? logDB.urlPhoto,
+                desc: desc
             })
             AtualizeData()
 
@@ -118,6 +127,7 @@ function PerfilInfo(props) {
 
             setNewName("")
             setNewNick("")
+            setNewDesc("")
             
             img.setAttribute("src", logDB.urlPhoto ?? logUser.photoURL ?? User)
 
@@ -137,29 +147,34 @@ function PerfilInfo(props) {
 
         return(
             <div className='perfilInner'>
-                <div className="imgPerfilInner">
-                    <img src={logDB.background ?? Capa} alt="" />
-                    <span></span>
+
+                <div className="perfilBox">
+                    <div className="personImg">
+                        <img className='perfilIMG' src={logDB.urlPhoto ?? logUser.photoURL ?? User} alt="" />
+                        <form className='altImageBox alter hidden' onSubmit={HandleUpload}>
+                            <input id="setImage" type="file" accept="image/png, image/jpeg"/>
+                            <label onClick={PerfilNameAlter} className='filePerfil' htmlFor="setImage">Escolher Imagem</label>
+                            <button id='buttonImgSave' type="submit" disabled>Enviar</button>
+                        </form>
+                    </div>
+
+                    <div className="namePerfil alter">
+                        <p className='userPerfilName'>{logDB.name ?? logUser.displayName}</p>
+                        <p className='userPerfilNick'>@{logDB.nickname ?? "Neki.nl"}</p>
+                    </div>
                 </div>
 
-                <div className="personImg">
-                    <img className='perfilIMG' src={logDB.urlPhoto ?? logUser.photoURL ?? User} alt="" />
-                    <form className='altImageBox alter hidden' onSubmit={HandleUpload}>
-                        <input id="setImage" type="file" accept="image/png, image/jpeg"/>
-                        <label onClick={PerfilNameAlter} className='filePerfil' htmlFor="setImage">Escolher Imagem</label>
-                        <button id='buttonImgSave' type="submit" disabled>Enviar</button>
-                    </form>
+                <div className="descPerfilArea alter">
+                    <p className="userPerfilDesc">{logDB.desc ?? "Sem descrição ainda! :( Digite uma resenha de filme ou um pouco sobre você. ps: qualquer coisa aleatoria também vale."}</p>
                 </div>
 
                 <div className="nameAlterBox alter hidden">
                     <input className='inputAlter' value={newName} onChange={(e) => setNewName(e.target.value)} type="text" placeholder={logDB.name}/>
                     <input className='inputAlter' value={newNick} onChange={(e) => setNewNick(e.target.value)}  type="text" placeholder={logDB.nickname} />
+                    <textarea className='descInput' value={newDesc} onChange={(e) => setNewDesc(e.target.value)} cols="30" rows="10" placeholder='Descrição'></textarea>
                 </div>
 
-                <div className="namePerfil alter">
-                    <p className='userPerfilName'>{logDB.name ?? logUser.displayName}</p>
-                    <p className='userPerfilNick'>({logDB.nickname ?? "Neki.nl"})</p>
-                </div>
+                
 
                 <div className="buttonsPerfil">
                     <button className='buttonAlter' onClick={AlterHidden}>Alterar</button>

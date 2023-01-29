@@ -4,6 +4,8 @@ import Header from '../../components/header/Index'
 import { useContext } from 'react'
 import { AuthGoogleContext } from '../../contexts/authGoogle'
 import { Navigate } from 'react-router-dom'
+import PostsArea from '../../components/postsArea/Index'
+import EmblemArea from '../../components/emblemArea'
 
 function Perfil(props) {
 
@@ -14,6 +16,7 @@ function Perfil(props) {
             <div className='Perfil'>
                 <Header />
                 <PerfilInfo />
+                <PostsArea />
             </div>
         )
     } else {

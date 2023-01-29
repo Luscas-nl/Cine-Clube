@@ -37,7 +37,7 @@ function Login () {
             </div>
         )
     } else {
-        return <Navigate to="/" />
+        return <Navigate to="/perfil" />
     }
 
     
