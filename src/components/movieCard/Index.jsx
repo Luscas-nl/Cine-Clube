@@ -1,5 +1,5 @@
 import './Style.css'
-import Filme from '../../assets/images/Psicose.jpg'
+import Filme from '../../assets/images/FIlme.jpg'
 
 
 function MovieCard(props) {
