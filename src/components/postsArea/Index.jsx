@@ -1,5 +1,5 @@
 import './Style.css'
-import Post from '../post'
+import Post from '../post/Index'
 
 function PostsArea(props) {
     return(
