@@ -23,7 +23,13 @@ function PerfilInfo(props) {
 
         const logUser = JSON.parse(user)
         const logDB = JSON.parse(userDB)
-        
+        var desc
+
+        if(logDB.desc == ""){
+            desc = "Sem descrição ainda! :( Digite uma resenha de filme ou um pouco sobre você. ps: qualquer coisa aleatoria também vale."
+        } else {
+            desc = logDB.desc
+        }
 
         const HandleUpload = (e) => {
             e.preventDefault()
@@ -67,6 +73,8 @@ function PerfilInfo(props) {
             const inputs = document.querySelectorAll(".inputAlter")
             const img = document.querySelector(".perfilIMG")
             const button = document.querySelector("#buttonImgSave")
+            const desc = document.querySelector(".descInput")
+
             button.setAttribute("disabled", "")
             setImgURL(null)
             
@@ -165,12 +173,17 @@ function PerfilInfo(props) {
                 </div>
 
                 <div className="descPerfilArea alter">
-                    <p className="userPerfilDesc">{logDB.desc ?? "Sem descrição ainda! :( Digite uma resenha de filme ou um pouco sobre você. ps: qualquer coisa aleatoria também vale."}</p>
+                    <p className="userPerfilDesc">{desc}</p>
                 </div>
 
                 <div className="nameAlterBox alter hidden">
                     <input className='inputAlter' value={newName} onChange={(e) => setNewName(e.target.value)} type="text" placeholder={logDB.name}/>
-                    <input className='inputAlter' value={newNick} onChange={(e) => setNewNick(e.target.value)}  type="text" placeholder={logDB.nickname} />
+                    <div className="arrobaBox">
+                        <div className="arrobaDiv">
+                            <i className='fa fa-at' aria-hidden="true"></i>
+                        </div>
+                        <input className='inputAlter alterNick' value={newNick} onChange={(e) => setNewNick(e.target.value)}  type="text" placeholder={logDB.nickname} />
+                    </div>
                     <textarea className='descInput' value={newDesc} onChange={(e) => setNewDesc(e.target.value)} cols="30" rows="10" placeholder='Descrição'></textarea>
                 </div>
 

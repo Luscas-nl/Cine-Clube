@@ -13,7 +13,7 @@ function UserOptions(props) {
         const logUser = JSON.parse(user)
         const logDB = JSON.parse(userDB)
 
-        var strg = logUser.displayName
+        var strg = logDB.name ?? logUser.displayName
         var firstName = strg?.split(' ')[0];
         var nickname
 

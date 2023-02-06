@@ -82,13 +82,37 @@
     flex-direction: row;
 }
 
-.nameAlterBox > input[type='text']{
-    background-color: rgba(34, 34, 34, 0.356);
+.nameAlterBox > input[type='text'], .inputAlter{
+    background-color: #2222225b;
     outline: 1px solid #383838;
     border: none;
     padding: 7px 9px;
     border-radius: 5px;
     margin: 5px 0;
+}
+
+.arrobaBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.arrobaDiv{
+    height: 32px;
+    width: 32px;
+    background-color: #383838;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    color: #000000;
+    margin-right: 5px;
+
+}
+
+.alterNick{
+    width: 87%;
 }
 
 .buttonSavePerfil.hidden{

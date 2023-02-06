@@ -8,6 +8,7 @@ function Post(props) {
 
     if(signed){
 
+        const date = new Date();
         const logDB = JSON.parse(userDB)
 
         return(
@@ -20,7 +21,7 @@ function Post(props) {
 
                 <div className="textsInner">
                     <div className="postText">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae pariatur quam suscipit unde repellat! Accusamus ullam esse assumenda earum velit placeat nostrum, nisi officiis modi asperiores dolorum quidem nam suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus laboriosam illo similique placeat molestias mollitia. Nobis, iusto!</p>
+                        <p>{props.cont}</p>
                     </div>
                     <p className="postInfos">- {logDB.name}, @{logDB.nickname}</p>
                 </div>

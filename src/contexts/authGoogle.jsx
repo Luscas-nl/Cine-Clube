@@ -41,7 +41,8 @@ export const AuthGoogleProvider = ({children}) => {
         await setDoc(doc(db, "users", user.email), {
             nickname: "",
             name: user.displayName,
-            desc: ""
+            desc: "",
+            urlPhoto: user.photoURL
         })
     }
 
