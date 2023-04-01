@@ -37,7 +37,7 @@
 
 .team{
     width: 90%;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: white;
     display: flex;
     flex-direction: column;

@@ -7,6 +7,7 @@ import MovieCard from '../../components/movieCard/Index'
 import RegisterForm from '../../components/registerForm/Index'
 import TeamCard from '../../components/teamCard/Index'
 import Carousel from 'react-elastic-carousel'
+import Footer from '../../components/footer/Index'
 
 function Home() {
 
@@ -62,6 +63,8 @@ function Home() {
                     })}
                 </Carousel>
             </section>
+
+            <Footer />
         </div>
     )
 }

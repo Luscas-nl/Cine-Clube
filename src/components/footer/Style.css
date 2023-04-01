@@ -1,0 +1,88 @@
+.homeFooter{
+    height: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.footerPlace{
+    display: flex;
+    width: 100%;
+    height: 450px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerBox{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoIF_Footer{
+    height: 90px;
+}
+
+.footerR{
+    width: 15%;
+}
+
+.footerR > p{
+    margin: 5px;
+    font-size: .9em;
+    width: 90%;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.campusName{
+    font-weight: 700;
+}
+
+.boxNameFooter{
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 40px;
+    background-color: black;
+    padding: 0px 11px;
+    font-size: 1.2em;
+}
+
+.boxContsFooter{
+    height: calc(100% - 40px);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.boxContsFooter > ul > li{
+    margin-bottom: 20px;
+}
+
+.SFooter{
+    font-weight: 400;
+}
+
+ul{
+    line-height: 1.5;
+    font-size: 1.1em;
+    display: block;
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.developerFooter{
+    font-size: .9em;
+    font-weight: 400;
+}

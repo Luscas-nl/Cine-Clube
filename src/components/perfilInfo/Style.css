@@ -89,6 +89,7 @@
     padding: 7px 9px;
     border-radius: 5px;
     margin: 5px 0;
+    color: gray;
 }
 
 .arrobaBox{
@@ -161,6 +162,7 @@
     border: none;
     padding: 7px 9px;
     resize: none;
+    color: gray;
 }
 
 .alter.hidden{
