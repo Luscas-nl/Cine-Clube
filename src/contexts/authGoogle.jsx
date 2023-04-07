@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState, createContext } from "react";
 import { app, db } from '../services/firebaseConfig';
 import { Navigate } from "react-router-dom";
-import { addDoc, collection, doc, getDoc, setDoc } from "firebase/firestore";
+import { addDoc, query, collection, doc, getDoc, setDoc, getDocs } from "firebase/firestore";
 
 export const AuthGoogleContext = createContext({})
 
@@ -14,6 +14,7 @@ export const AuthGoogleProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const auth = getAuth(app);
     const [userDB, setUserDB] = useState(null)
+    const [posts, setPosts] = useState(null)
 
     useEffect(() => {
         const loadStoreAuth = () => {
@@ -33,6 +34,7 @@ export const AuthGoogleProvider = ({children}) => {
         localStorage.removeItem("@AuthFirebase:token")
         localStorage.removeItem("@AuthFirebase:user")
         localStorage.removeItem("@Firestore:user")
+        localStorage.removeItem("@Firestore:posts")
 
         document.location.reload()
     }
@@ -53,9 +55,23 @@ export const AuthGoogleProvider = ({children}) => {
         if(docSnap.exists()){
             setUserDB(docSnap.data())
             localStorage.setItem("@Firestore:user", JSON.stringify(docSnap.data()))
+            setPosts(await getPost(userLog))
+            console.log(posts)
         } else {
             makeUser(userLog)
         }
+    }
+
+    async function getPost(userInfo){
+        var postsTemp = []
+        const docRef = collection(userRef, userInfo.email, "posts")
+        const docSnap = await getDocs(docRef)
+
+        return postsTemp = docSnap.forEach((post) => {
+            postsTemp = [...postsTemp, post.data()]
+            console.log(postsTemp)
+        })
+
     }
 
     async function AtualizeData (){
@@ -89,7 +105,7 @@ export const AuthGoogleProvider = ({children}) => {
 
     return(
         <AuthGoogleContext.Provider
-        value={{ signInGoogle, signed: !!user && !!userDB, user, logOff, userDB, AtualizeData}}
+        value={{ signInGoogle, posts, signed: !!user && !!userDB, user, logOff, userDB, AtualizeData}}
         >
             {children}
         </AuthGoogleContext.Provider>
