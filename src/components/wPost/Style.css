@@ -1,0 +1,65 @@
+.wPostArea{
+    width: 90%;
+    background-color: black;
+    border-radius: 11px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 11px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.photoBox{
+    width: 70px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.photoPostInner{
+    width: 70px;
+    height: 70px;
+}
+
+.photoPostInner > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+.WArea{
+    width: calc(100% - 60px);
+    min-height: 100%;
+}
+
+.textAreaPost{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: 1;
+    margin-left: 5px;
+    margin-top: 5px;
+    resize: none;
+    overflow: hidden;
+    min-height: 20px;
+}
+
+.optionsPostArea{
+    position: absolute;
+    height: 30px;
+    bottom: 5px;
+    right: 11px;
+}
+
+.optionsPostArea > i{
+    cursor: pointer;
+    color: #D21F35;
+    font-size: 1.2;
+}

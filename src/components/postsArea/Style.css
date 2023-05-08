@@ -1,9 +1,22 @@
 .PostArea{
-    width: calc(100vw - 380px);
+    width: calc(100vw - 800px);
+    min-height: calc(100vh - 65px);
     background-color: #111111;
     margin-top: 65px;
     margin-left: 380px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.textNotArea{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textNotArea > p{
+    color: #373737;
+    font-size: 3em;
 }
