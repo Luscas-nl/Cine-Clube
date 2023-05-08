@@ -16,13 +16,35 @@ export const AuthGoogleProvider = ({children}) => {
     const [userDB, setUserDB] = useState(null)
     const [posts, setPosts] = useState(null)
 
+    async function fetchPosts() {
+        if (userDB && user) {
+            const fetchedPosts = await getPost(user);
+            localStorage.setItem("@Firestore:posts", typeof fetchedPosts === 'object' ? JSON.stringify(fetchedPosts) : fetchedPosts);
+            setPosts(fetchedPosts);
+        }
+    }
+
+    useEffect(() => {
+        fetchPosts();
+    }, [userDB, user]);
+
+    useEffect(() => {
+        const loadPost = () => {
+            const sessionPost = localStorage.getItem("@Firestore:posts")
+            if (sessionPost) {
+                setPosts(sessionPost)
+            }
+        }
+        loadPost();
+    }, [])
+
     useEffect(() => {
         const loadStoreAuth = () => {
             const sessionToken = localStorage.getItem("@AuthFirebase:token")
             const sessionUser = localStorage.getItem("@AuthFirebase:user")
             const sessionDB = localStorage.getItem("@Firestore:user")
 
-            if(sessionToken && sessionUser && sessionDB){
+            if(sessionToken && sessionUser && sessionDB) {
                 setUser(sessionUser)
                 setUserDB(sessionDB)
             }
@@ -55,14 +77,28 @@ export const AuthGoogleProvider = ({children}) => {
         if(docSnap.exists()){
             setUserDB(docSnap.data())
             localStorage.setItem("@Firestore:user", JSON.stringify(docSnap.data()))
-            setPosts(await getPost(userLog))
-            console.log(posts)
         } else {
             makeUser(userLog)
         }
     }
 
-    async function getPost(userInfo){
+    async function getPost(userInfo) {
+        const docRef = collection(userRef, userInfo.email, "posts");
+        const docSnap = await getDocs(docRef);
+
+        if (docSnap.size > 0) {
+            const postsTemp = [];
+            docSnap.forEach((post) => {
+                postsTemp.push(post.data());
+            });
+            console.log(postsTemp);
+            return postsTemp;
+        } else {
+            return [];
+        }
+    }
+
+    /*async function getPost(userInfo){
         var postsTemp = []
         const docRef = collection(userRef, userInfo.email, "posts")
         const docSnap = await getDocs(docRef)
@@ -72,7 +108,7 @@ export const AuthGoogleProvider = ({children}) => {
             console.log(postsTemp)
         })
 
-    }
+    }*/
 
     async function AtualizeData (){
         if(user){
